@@ -1,0 +1,47 @@
+<%= form_with(model: admin_course) do |form| %>
+  <% if admin_course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_course.errors.count, "error") %> prohibited this admin_course from being saved:</h2>
+
+      <ul>
+        <% admin_course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published %>
+    <%= form.check_box :published %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meta_description %>
+    <%= form.text_area :meta_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meta_title %>
+    <%= form.text_area :meta_title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

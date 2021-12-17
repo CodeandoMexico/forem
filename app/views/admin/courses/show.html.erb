@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_course.name %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @admin_course.published %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @admin_course.slug %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_course.description %>
+</p>
+
+<p>
+  <strong>Meta description:</strong>
+  <%= @admin_course.meta_description %>
+</p>
+
+<p>
+  <strong>Meta title:</strong>
+  <%= @admin_course.meta_title %>
+</p>
+
+<%= link_to 'Edit', edit_admin_course_path(@admin_course) %> |
+<%= link_to 'Back', admin_courses_path %>

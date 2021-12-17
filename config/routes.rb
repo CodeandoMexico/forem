@@ -1,6 +1,9 @@
 # rubocop:disable Metrics/BlockLength
 
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :courses
+  end
   use_doorkeeper do
     controllers tokens: "oauth/tokens"
   end
