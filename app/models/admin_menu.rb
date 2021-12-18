@@ -10,6 +10,10 @@ class AdminMenu
       item(name: "people", controller: "users"),
     ]
 
+    scope :courses, "user-line", [
+      item(name: "course", controller: "courses"),
+    ]
+
     scope :content_manager, "dashboard-line", [
       item(name: "posts", controller: "articles"),
       item(name: "comments", controller: "comments"),
