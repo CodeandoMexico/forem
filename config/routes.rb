@@ -245,7 +245,11 @@ Rails.application.routes.draw do
     get "/💸", to: redirect("t/hiring")
     get "/survey", to: redirect("https://dev.to/ben/final-thoughts-on-the-state-of-the-web-survey-44nn")
     get "/sponsors", to: "pages#sponsors"
+    get "/glosario", to: "pages#glosario"
     get "/search", to: "stories/articles_search#index"
+    get "/chambas", to: "chambas#chambas"
+    get "/chambas/:filter_active", to: "chambas#chamba"
+    get "/chamba", to: "chambas#chamba"
     post "articles/preview", to: "articles#preview"
     post "comments/preview", to: "comments#preview"
 

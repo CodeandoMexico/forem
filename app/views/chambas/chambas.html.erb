@@ -1,0 +1,79 @@
+<div class="crayons-layout">
+  <div class="filters" style="display: flex; flex-direction: row;"><!--los estilos de esta etiqueta solo son temporales-->
+    <div class="filters-applied">
+      <% @filters.each do |filter| %>
+        <div class="filter"><%= link_to(filter.to_s, chambas_path(filter_active: filter)) %> </div>
+      <% end %>
+    </div>
+    <div class="filters-btn">
+      <a>
+        <i class="fas fa-filter"></i> Filtros
+      </a>
+    </div>
+  </div>
+  variable desde back:<%= @var_back %>
+  <div class="chambas-found mb-5">
+    <span>4 chambitas encontradas</span>
+    <a><i class="fas fa-sort-amount-down"></i>Mas recientes</a>
+  </div>
+  <div id="chambas">
+    <div class="chambas-list">
+      <a href="#">
+        <div class="chamba crayons-card mb-6 chambas-card pl-5 pr-5 pt-4 pb-4">
+          <%= image_tag "chamba-icon.png", class: "chamba-image" %>
+          <div class="chamba-summary pl-5">
+            <h4>Codeando México</h4>
+            <h3>Intern en Tecnologia</h3>
+            <span>Web</span>
+            <span>Diseño</span>
+            <span>APIs</span>
+            <span>Programacion</span>
+          </div>
+          <span class="chamba-date">27-Nov-2021</span>
+        </div>
+      </a>
+      <a href="#">
+        <div class="chamba crayons-card mb-6 chambas-card pl-5 pr-5 pt-4 pb-4">
+          <%= image_tag "chamba-icon.png", class: "chamba-image" %>
+          <div class="chamba-summary pl-5">
+            <h4>Codeando México</h4>
+            <h3>Intern en Tecnologia</h3>
+            <span>Web</span>
+            <span>Diseño</span>
+            <span>APIs</span>
+            <span>Programacion</span>
+          </div>
+          <span class="chamba-date">27-Nov-2021</span>
+        </div>
+      </a>
+      <a href="#">
+        <div class="chamba crayons-card mb-6 chambas-card pl-5 pr-5 pt-4 pb-4">
+          <%= image_tag "chamba-icon.png", class: "chamba-image" %>
+          <div class="chamba-summary pl-5">
+            <h4>Codeando México</h4>
+            <h3>Intern en Tecnologia</h3>
+            <span>Web</span>
+            <span>Diseño</span>
+            <span>APIs</span>
+            <span>Programacion</span>
+          </div>
+          <span class="chamba-date">27-Nov-2021</span>
+        </div>
+      </a>
+      <a href="#">
+        <div class="chamba crayons-card mb-6 chambas-card pl-5 pr-5 pt-4 pb-4">
+          <%= image_tag "chamba-icon.png", class: "chamba-image" %>
+          <div class="chamba-summary pl-5">
+            <h4>Codeando México</h4>
+            <h3>Intern en Tecnologia</h3>
+            <span>Web</span>
+            <span>Diseño</span>
+            <span>APIs</span>
+            <span>Programacion</span>
+          </div>
+          <span class="chamba-date">27-Nov-2021</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

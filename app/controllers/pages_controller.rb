@@ -82,6 +82,12 @@ class PagesController < ApplicationController
     set_surrogate_key_header "terms_page"
   end
 
+  def glosario
+    @page = Page.find_by(slug: "glosario")
+    render :show if @page
+    set_surrogate_key_header "glosario"
+  end
+
   def report_abuse
     reported_url = params[:reported_url] || params[:url] || request.referer.presence
     @feedback_message = FeedbackMessage.new(
