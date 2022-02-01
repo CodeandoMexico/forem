@@ -247,7 +247,7 @@ Rails.application.routes.draw do
     get "/sponsors", to: "pages#sponsors"
     get "/glosario", to: "pages#glosario"
     get "/search", to: "stories/articles_search#index"
-    get "/chambas", to: "chambas#chambas"
+    get "/chambas", to: "chambas#index"
     get "/chambas/:filter_active", to: "chambas#chamba"
     get "/chamba", to: "chambas#chamba"
     post "articles/preview", to: "articles#preview"
