@@ -247,9 +247,12 @@ Rails.application.routes.draw do
     get "/sponsors", to: "pages#sponsors"
     get "/glosario", to: "pages#glosario"
     get "/search", to: "stories/articles_search#index"
+
     get "/chambas", to: "chambas#index"
-    get "/chambas/:filter_active", to: "chambas#chamba"
+    get "chambas/:chamba_id", to: "chambas#chamba", as: "chamba"
+    get "/chambas:filtro_area", to: "chambas#filtro_areas"
     get "/chamba", to: "chambas#chamba"
+
     post "articles/preview", to: "articles#preview"
     post "comments/preview", to: "comments#preview"
 
@@ -356,6 +359,12 @@ Rails.application.routes.draw do
     get "/:username/:slug/comments/:id_code", to: "comments#index"
     get "/:username/:slug/comments/:id_code/edit", to: "comments#edit"
     get "/:username/:slug/comments/:id_code/delete_confirm", to: "comments#delete_confirm"
+
+    # Chambas admin
+    get "/:username/:slug/chambas", to: "admin/chambas#index"
+
+    # new chamba creation
+    post "/chambas", to: "admin/chambas#create"
 
     # Proper link format
     get "/:username/comment/:id_code", to: "comments#index"

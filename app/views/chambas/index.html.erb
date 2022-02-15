@@ -1,0 +1,27 @@
+<div class="crayons-layout">
+
+  <div class="chambas-found mb-5">
+    <span><%= @chambas_vec.length %> Chambitas encontradas</span>
+  </div>
+  <div id="chambas">
+    <div class="chambas-list">
+      <a href="#">
+        <% @chambas_vec.length.times do |reg_chamba| %>
+        <!--tags-publicaciones-->
+        <%= link_to chamba_path(chamba_id: @chambas_vec[reg_chamba].id) do %>
+          <div class="chamba crayons-card mb-6 chambas-card pl-5 pr-5 pt-4 pb-4">
+            <%= image_tag "chamba-icon.png", class: "|chamba-image" %>
+            <div class="chamba-summary pl-5">
+              <h4>Codeando México</h4>
+              <h3><%= @chambas_vec[reg_chamba].title %></h3>
+              <% @areas_chambas.where(chamba_id: @chambas_vec[reg_chamba].id).each do |vinculo| %>
+                <span><%= vinculo.area.name %></span>&nbsp;
+              <% end %>
+            </div>
+            <span class="chamba-date">27-Nov-2021</span>
+          </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

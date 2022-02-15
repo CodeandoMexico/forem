@@ -589,6 +589,49 @@ end
 
 ##############################################################################
 
+Chamba.create(title: "Se busca Developer en 'RUBY'", post_date: "2022-02-01", exp_date: "2022-02-01",
+              description: "Se reuiere developer en ruby para desarrollar una web-app", organization: "FOCUSEM", location: "Mexico", salary: 10_000, created_at: "2022-02-02", updated_at: "2022-02-02")
+Chamba.create(title: "Se busca 'Full-stack'", post_date: "2022-02-01", exp_date: "2022-02-01",
+              description: "Se reuiere developer en fullstack para desarrollar una web-app", organization: "FOREM", location: "Canada", salary: 15_000, created_at: "2022-02-02", updated_at: "2022-02-02")
+Chamba.create(title: "Se busca 'Developer UX/UI'", post_date: "2022-02-01", exp_date: "2022-02-01",
+              description: "Se reuiere diseñador UX/UI", organization: "DEVS-MEXICO", location: "España", salary: 30_000, created_at: "2022-02-02", updated_at: "2022-02-02")
+Chamba.create(title: "Se busca 'QA'", post_date: "2022-02-01", exp_date: "2022-02-01",
+              description: "Se reuiere un especialista en QA", organization: "BRIGHTCODERS", location: "Panama", salary: 17_000, created_at: "2022-02-02", updated_at: "2022-02-02")
+Chamba.create(title: "Se busca 'Manager of database'", post_date: "2022-02-01", exp_date: "2022-02-01",
+              description: "Se reuiere un db-manager para administrar una base de datos", organization: "GOOGLE-INC", location: "Mexico", salary: 22_000, created_at: "2022-02-02", updated_at: "2022-02-02")
+
+# AreasChamba.create(chamba_id: 1, area_id: 2, created_at: "2022-02-02", updated_at: "2022-02-02")
+# AreasChamba.create(chamba_id: 3, area_id: 1, created_at: "2022-02-02", updated_at: "2022-02-02")
+# AreasChamba.create(chamba_id: 2, area_id: 3, created_at: "2022-02-02", updated_at: "2022-02-02")
+# AreasChamba.create(chamba_id: 4, area_id: 4, created_at: "2022-02-02", updated_at: "2022-02-02")
+# AreasChamba.create(chamba_id: 5, area_id: 5, created_at: "2022-02-02", updated_at: "2022-02-02")
+
+# Area.create(name: "Full-stack", created_at: "2022-02-02", updated_at: "2022-02-02")
+# Area.create(name: "Frontend", created_at: "2022-02-02", updated_at: "2022-02-02")
+# Area.create(name: "Backend", created_at: "2022-02-02", updated_at: "2022-02-02")
+# Area.create(name: "UX/UI", created_at: "2022-02-02", updated_at: "2022-02-02")
+# Area.create(name: "QA", created_at: "2022-02-02", updated_at: "2022-02-02")
+# Area.create(name: "Web", created_at: "2022-02-02", updated_at: "2022-02-02")
+# Area.create(name: "Programación", created_at: "2022-02-02", updated_at: "2022-02-02")
+# Area.create(name: "Api's", created_at: "2022-02-02", updated_at: "2022-02-02")
+
+# RequerimientosChamba.create(description: "HTML", chamba_id: 2)
+# RequerimientosChamba.create(description: "Python", chamba_id: 3)
+# RequerimientosChamba.create(description: "Javascript", chamba_id: 3)
+# RequerimientosChamba.create(description: "Buena comunicacion en equipo", chamba_id: 4)
+# RequerimientosChamba.create(description: "Atencion al detalle", chamba_id: 5)
+# RequerimientosChamba.create(description: "C++", chamba_id: 1)
+# RequerimientosChamba.create(description: "c#", chamba_id: 1)
+# RequerimientosChamba.create(description: "PHP", chamba_id: 5)
+# RequerimientosChamba.create(description: "MySQL", chamba_id: 3)
+# RequerimientosChamba.create(description: "Ruby", chamba_id: 2)
+# RequerimientosChamba.create(description: "RubyonRails", chamba_id: 2)
+# RequerimientosChamba.create(description: "NoSQL", chamba_id: 4)
+# RequerimientosChamba.create(description: "React Native", chamba_id: 5)
+# RequerimientosChamba.create(description: "React", chamba_id: 4)
+
+##############################################################################
+
 puts <<-ASCII
 
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

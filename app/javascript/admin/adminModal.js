@@ -16,6 +16,9 @@
  * @param {string} modalProps.leftCustomDataAttr A custom data attribute for the left button.
  * @param {string} modalProps.rightCustomDataAttr A custom data attribute for the right button.
  */
+
+//AQUI PONES EL SCRIPT DEL CRUD:
+
 export const adminModal = function ({
   title,
   controllerName,

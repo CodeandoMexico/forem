@@ -1,0 +1,41 @@
+<div class="chamba">
+    <div class="crayons-layout">
+        <div class="card-chamba">
+            <div class="return-chamba">
+                <%= link_to chambas_path do %><i class="fas fa-caret-left i-icon"></i>Regresar<% end %>
+            </div>
+            <div class="chamba-info">
+                <div class="chamba-logo">
+                    <%= image_tag "chamba-icon.png", class: "codeando-logo" %>
+                    <h3><%= @chamba.organization %></h3>
+                    <h4><%= @chamba.created_at.strftime("%d-%B-%Y") %></h4>
+                </div>
+
+                <div class="chamba-title">
+                    <h1><%= @chamba.title %></h1>
+                    <div><i class="fas fa-map-marker-alt i-icon"></i>
+                        <h2><%= @chamba.location %></h2>
+                        <h2> | </h2>
+                        <h2></h2>
+                        <h2> | </h2>
+                        <h2><%= @chamba.sueldo %></h2>
+                    </div>
+                </div>
+                <div class="chamba-btn">
+                    <button type="button" class="apply">Aplicar ahora</button>
+                </div>
+            </div>
+        </div>
+        <div class="chamba-details">
+            <div class="chamba-responsibilities">
+                <h3>Responsabilidades</h3>
+                <p><%= @chamba.descripcion %></p>
+            </div>
+            <div class="chamba-requirements">
+                <h3>Requirimientos</h3>
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

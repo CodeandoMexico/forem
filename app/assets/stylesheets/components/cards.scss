@@ -43,40 +43,14 @@
   }
 }
 
-.filters {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-
-  .filters-applied {
-    display: flex;
-    align-items: center;
-
-    .filter {
-      color: #3b49df;
-      background-color: #3b49df36;
-      border-radius: 40px;
-      border: 5px solid #3b49df;
-      padding: 0.5rem 1.5rem;
-      margin-right: 20px;
-    }
-  }
-  .filters-btn {
-    background-color: white;
-    border-radius: 40px;
-    border: 5px solid #d7d7d7;
-    padding: 0.5rem 1.5rem;
-    cursor: pointer;
-
-    a {
-      color: #b0b0b0;
-    }
-  }
-}
-
 .i-icon {
   margin-right: 0.3rem;
+}
+
+.chambita-title {
+  a {
+    font-weight: 700;
+  }
 }
 
 .chambas-found {
@@ -94,6 +68,33 @@
     border: 5px solid #d7d7d7;
     padding: 0.5rem 1.5rem;
     cursor: pointer;
+  }
+}
+
+.crud-card-main {
+  background-color: #cdd1e4;
+  border: none;
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+#add-btn {
+  border: none;
+  color: white;
+  background-color: #6c7a89;
+
+  &:hover {
+    background-color: #bdc3c7;
   }
 }
 
@@ -141,5 +142,69 @@
     line-height: 21px;
     font-size: 14px;
     color: #84858c;
+  }
+}
+
+.crud-card {
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    transition: all var(--transition-props);
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.body-blackout {
+  position: absolute;
+  z-index: 1010;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: none;
+
+  &.is-blacked-out {
+    display: block;
+  }
+}
+
+.popup-trigger {
+  display: inline-block;
+}
+
+.popup-modal {
+  height: 365px;
+  width: 650px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 45px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+  z-index: 1011;
+  border-radius: 6px;
+
+  &.is--visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__close {
+    position: absolute;
+    font-size: 1.2rem;
+    right: -10px;
+    top: -10px;
+    cursor: pointer;
   }
 }

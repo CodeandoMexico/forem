@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_205052) do
+ActiveRecord::Schema.define(version: 2022_02_09_231957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -77,6 +77,21 @@ ActiveRecord::Schema.define(version: 2022_01_26_205052) do
     t.bigint "user_id"
     t.index ["secret"], name: "index_api_secrets_on_secret", unique: true
     t.index ["user_id"], name: "index_api_secrets_on_user_id"
+  end
+
+  create_table "areas", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.string "name"
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "areas_chambas", force: :cascade do |t|
+    t.bigint "area_id", null: false
+    t.bigint "chamba_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["area_id"], name: "index_areas_chambas_on_area_id"
+    t.index ["chamba_id"], name: "index_areas_chambas_on_chamba_id"
   end
 
   create_table "articles", force: :cascade do |t|
@@ -285,6 +300,21 @@ ActiveRecord::Schema.define(version: 2022_01_26_205052) do
     t.datetime "updated_at"
     t.index ["broadcastable_type", "broadcastable_id"], name: "index_broadcasts_on_broadcastable_type_and_broadcastable_id", unique: true
     t.index ["title", "type_of"], name: "index_broadcasts_on_title_and_type_of", unique: true
+  end
+
+  create_table "chambas", force: :cascade do |t|
+    t.string "cover_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.string "date"
+    t.string "description"
+    t.date "exp_date"
+    t.string "location"
+    t.string "organization"
+    t.string "position"
+    t.string "post_date"
+    t.integer "salary"
+    t.string "title"
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "classified_listing_categories", force: :cascade do |t|
@@ -961,6 +991,14 @@ ActiveRecord::Schema.define(version: 2022_01_26_205052) do
     t.index ["user_id", "reactable_id", "reactable_type", "category"], name: "index_reactions_on_user_id_reactable_id_reactable_type_category", unique: true
   end
 
+  create_table "requerimientos_chambas", force: :cascade do |t|
+    t.bigint "chamba_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.string "description"
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chamba_id"], name: "index_requerimientos_chambas_on_chamba_id"
+  end
+
   create_table "response_templates", force: :cascade do |t|
     t.text "content", null: false
     t.string "content_type", null: false
@@ -1365,6 +1403,8 @@ ActiveRecord::Schema.define(version: 2022_01_26_205052) do
   add_foreign_key "ahoy_messages", "users", on_delete: :cascade
   add_foreign_key "ahoy_visits", "users", on_delete: :cascade
   add_foreign_key "api_secrets", "users", on_delete: :cascade
+  add_foreign_key "areas_chambas", "areas"
+  add_foreign_key "areas_chambas", "chambas"
   add_foreign_key "articles", "collections", on_delete: :nullify
   add_foreign_key "articles", "organizations", on_delete: :nullify
   add_foreign_key "articles", "users", on_delete: :cascade
@@ -1426,6 +1466,7 @@ ActiveRecord::Schema.define(version: 2022_01_26_205052) do
   add_foreign_key "rating_votes", "articles", on_delete: :cascade
   add_foreign_key "rating_votes", "users", on_delete: :nullify
   add_foreign_key "reactions", "users", on_delete: :cascade
+  add_foreign_key "requerimientos_chambas", "chambas"
   add_foreign_key "response_templates", "users"
   add_foreign_key "sponsorships", "organizations"
   add_foreign_key "sponsorships", "users"

@@ -324,8 +324,8 @@
 }
 
 .chamba-info {
-  padding-left: 80px;
   padding-bottom: 20px;
+  padding-left: 80px;
 }
 
 .card-chamba {
@@ -357,14 +357,17 @@
 
 .chamba-title {
   color: #4449e0d6;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .chamba-title h1 {
-  font-size: 80px;
+  font-size: 70px;
 }
 
 .chamba-title h2 {
   font-weight: 400;
+  margin: 5px;
 }
 
 .chamba-btn .apply {
@@ -397,4 +400,9 @@
 .return-chamba {
   font-size: 18.0778px;
   padding-left: 30px;
+}
+
+.chamba-div {
+  display: flex;
+  align-items: center;
 }

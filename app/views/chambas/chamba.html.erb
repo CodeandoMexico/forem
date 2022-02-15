@@ -1,32 +1,44 @@
 <div class="chamba">
-    <div class="crayons-layout crayons-layout--3-cols crayons-layout--3-cols--drop-right-left">
-        <div class="navbar">
-        </div>
+    <div class="crayons-layout">
         <div class="card-chamba">
-        <div class="return-chamba">
-            <a href="#">Regresar</a>
-        </div>
-        <div class="title-chamba">
-                <%= image_tag "chamba-icon.png" %>
-                <span>Codeando México</span>
-        </div>
-            <h1>Intern en tecnología</h1>
-            <span>Remoto (México) | Internship | $1M</span>
-            <div class="chamba-btn">
-                <button type="button" class="btn btn-primary">Aplicar ahora</button>
+            <div class="return-chamba">
+                <a href="#"><i class="fas fa-caret-left i-icon"></i>Regresar</a>
             </div>
-            <div class="chamba-info">
+                <div class="chamba-info">
+                    <div class="chamba-logo">
+                    <%= image_tag "chamba-icon.png", class: "codeando-logo" %>
+                        <div>
+                            <h3><%= @chamba.organization %></h3>
+                            <h4><%= @chamba.created_at.strftime("%d - %B - %Y") %></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="chamba-title">
+                    <h1><%= @chamba.title %></h1>
+                    <div class="chamba-div">
+                        <i class="fas fa-map-marker-alt i-icon"></i>
+                        <h2><%= @chamba.location %></h2>
+                        <h2> | </h2>
+                        <h2><%= @chamba.position %></h2>
+                        <h2> | </h2>
+                        <h2>$<%= @chamba.salary %></h2>
+                    </div>
+                    <div class="chamba-btn">
+                        <button type="button" class="apply">Aplicar ahora</button>
+                    </div>
+                </div>
+        </div>
+            <div class="chamba-details">
                 <div class="chamba-responsibilities">
-                <h3>Responsabilidades</h3>
-                    <span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam .</span>
+                    <h3>Responsabilidades</h3>
+                        <p><%= @chamba.description %></p>
                 </div>
                 <div class="chamba-requirements">
-                <h3>Requerimientos</h3>
+                    <h3>Requerimientos</h3>
                     <ul>
-                        <li>Hola</li>
-                        <li>Bubulubuenas noches</li>
-                        <li>Como stas</li>
-                        <li>arriva paiton</li>
+                        <% @requerimientos.length.times do |reg_req| %>
+                            <li><%= @requerimientos[reg_req].description %></li>
+                        <% end %>
                     </ul>
                 </div>
             </div>
