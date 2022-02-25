@@ -31,13 +31,13 @@
             <div class="chamba-details">
                 <div class="chamba-responsibilities">
                     <h3>Responsabilidades</h3>
-                        <p><%= @chamba.description %></p>
+                    <p><%= @chamba.description %></p>
                 </div>
                 <div class="chamba-requirements">
                     <h3>Requerimientos</h3>
                     <ul>
                         <% @requerimientos.length.times do |reg_req| %>
-                            <li><%= @requerimientos[reg_req].description %></li>
+                        <li><%= @requerimientos[reg_req] %></li>
                         <% end %>
                     </ul>
                 </div>

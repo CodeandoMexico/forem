@@ -252,7 +252,7 @@ Rails.application.routes.draw do
     get "chambas/:chamba_id", to: "chambas#chamba", as: "chamba"
     get "/chambas:filtro_area", to: "chambas#filtro_areas"
     get "/chamba", to: "chambas#chamba"
-
+    
     post "articles/preview", to: "articles#preview"
     post "comments/preview", to: "comments#preview"
 
@@ -363,8 +363,13 @@ Rails.application.routes.draw do
     # Chambas admin
     get "/:username/:slug/chambas", to: "admin/chambas#index"
 
-    # new chamba creation
-    post "/chambas", to: "admin/chambas#create"
+    # crud chamba from forem
+    post "/chambas", to: "admin/chambas#create_chamba_from_forem"
+    post "/admin/content_manager/edit_chambas_list", to: "admin/chambas#update_chamba_from_list" #this is only for update exp_date, and for bann or approve chambas
+    post "/admin/content_manager/update_chamba_list", to: "admin/chambas#update_chamba"
+
+   
+
 
     # Proper link format
     get "/:username/comment/:id_code", to: "comments#index"

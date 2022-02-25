@@ -1,56 +1,45 @@
-<% if @chamba_save == true %>
-  <div class="alert alert-success" role="alert">
-    La chambita fue agregada! 😀
-  </div>
-  <% elsif @chamba_save == false %>
-  <div class="alert alert-danger" role="alert">
-    La chambita no fue agregada 😔
-  </div>
-<% end %>
-
 <div class="card my-3 crud-card crud-card-main">
-  <div class="card-header">
-    <div id="form_chamba">
-      <div class="input-group mb-3">
-        <input type="text" name="title" class="form-control" placeholder="Titulo">
-        &nbsp;
-        &nbsp;
-          &nbsp;
-        <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
-        <input type="text" name="location" class="form-control" placeholder="Ubicación">
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Organización / empresa</span>
-        <input type="text" name="organization" class="form-control" placeholder="Forem" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">Puesto</span>
-        <input type="text" name="stall" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-        &nbsp;
-        &nbsp;
-          &nbsp;
-        <span class="input-group-text">$</span>
-        <input type="text" name="salary" class="form-control" id="basic-url" placeholder="Sueldo" aria-describedby="basic-addon3">
-      </div>
-
-      <div class="input-group">
-        <span class="input-group-text">Descripción</span>
-        <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
-      </div>
-      <br>
-      <label for="basic-url" class="form-label">Requerimientos</label>
-
-      <div class="input-group mb-3">
-        <input type="text" id="input_requirement" class="form-control" placeholder="Escribe aqui un requisito para agregarlo" aria-label="Username" aria-describedby="basic-addon1">
-        <span type="submit" class="btn btn-secondary" id="add_requirement">Agregar</span>
-        <span class="btn btn-warning" id="show_requirements">Ver requerimientos</span>
-      </div>
-
-      <button id="crear_chamba" class="btn btn-primary">Crear chambita</button>
+  <div id="form_chamba" class="card-header">
+  <%= form_for @chamba do |f|%>
+    <div class="input-group mb-4">
+      <%= f.text_field :title, :class => "form-control", placeholder: "Titulo de la chamba", :required => true%>
+      <!--<input id="title" type="text" name="title" class="form-control" placeholder="Titulo">-->
+      &nbsp; &nbsp; &nbsp;
+      <label class="input-group-text">📍</label>
+      <%= f.text_field :location, :class => "form-control", placeholder: "Ubicación", :required => true%>
     </div>
+
+    <div class="input-group mb-4">
+      <label class="input-group-text" id="basic-addon1">Organización / empresa</label>
+      <!--<input type="text" name="organization" class="form-control" placeholder="Forem" aria-label="Username" aria-describedby="basic-addon1">-->
+      <%= f.text_field :organization, :class => "form-control", placeholder: "Organización", :required => true%>
+       &nbsp; &nbsp;
+      <label class="input-group-text" id="basic-addon1">📅 Expiración</label>
+      <!--<input type="text" name="organization" class="form-control" placeholder="Forem" aria-label="Username" aria-describedby="basic-addon1">-->
+      <%= f.date_field :exp_date, :class => "form-control", placeholder: "Fecha de expiración", :required => true%>
+    </div>
+
+    <div class="input-group mb-4">
+      <label class="input-group-text">Puesto</label>
+      <%= f.text_field :stall, :class => "form-control", placeholder: "Puesto", :required => true%>
+      &nbsp; &nbsp;
+      <label class="input-group-text">💰</label>
+      <%= f.number_field :salary, :class => "form-control", placeholder: "Salario", :required => true%>
+    </div>
+
+    <div class="input-group mb-4">
+      <label class="input-group-text">📝</label>
+      <%= f.text_area :description, :class => "form-control", placeholder: "Descripción", :required => true%>
+    </div>
+    
+    <label for="basic-url" class="form-label requirements-label">Para poder agregar los requisitos escribe cada requisito separado por una coma o no podrá ser agregado..</label>
+    <div class="input-group mb-5">
+      <label class="input-group-text">Requerimientos</label>
+      <%= f.text_field :requirements, :class => "form-control", placeholder: "Requerimientos", :required => true%>
+    </div>
+    <button id="createChambaBtn" class="btn btn-primary">Crear chambita</button>
   </div>
+  <%end%>
 </div>
 
 <div class="row">

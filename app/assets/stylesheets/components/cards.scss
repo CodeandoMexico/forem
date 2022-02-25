@@ -1,4 +1,4 @@
-@import '../config/import';
+@import "../config/import";
 
 .crayons-card {
   border-radius: var(--radius-auto);
@@ -71,6 +71,10 @@
   }
 }
 
+#info_icon_exp_date {
+  padding-left: .5rem;
+}
+
 .crud-card-main {
   background-color: #cdd1e4;
   border: none;
@@ -83,8 +87,11 @@
   }
 
   /* Firefox */
-  input[type='number'] {
+  input[type="number"] {
     -moz-appearance: textfield;
+  }
+  .requirements-label {
+    color: #686868;
   }
 }
 
@@ -103,8 +110,7 @@
   grid-template-columns: 13% 77% 10%;
 
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     transition: all var(--transition-props);
   }
   .chamba-image {
@@ -147,15 +153,14 @@
 
 .crud-card {
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     transition: all var(--transition-props);
   }
 }
 
 @mixin clearfix {
   &:after {
-    content: '';
+    content: "";
     display: table;
     clear: both;
   }
