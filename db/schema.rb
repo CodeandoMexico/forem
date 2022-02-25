@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_09_231957) do
+ActiveRecord::Schema.define(version: 2022_02_17_230122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -303,6 +303,7 @@ ActiveRecord::Schema.define(version: 2022_02_09_231957) do
   end
 
   create_table "chambas", force: :cascade do |t|
+    t.boolean "approve"
     t.string "cover_image"
     t.datetime "created_at", precision: 6, null: false
     t.string "date"
@@ -312,7 +313,9 @@ ActiveRecord::Schema.define(version: 2022_02_09_231957) do
     t.string "organization"
     t.string "position"
     t.string "post_date"
+    t.string "requirements"
     t.integer "salary"
+    t.string "stall"
     t.string "title"
     t.datetime "updated_at", precision: 6, null: false
   end
