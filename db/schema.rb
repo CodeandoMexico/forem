@@ -304,7 +304,6 @@ ActiveRecord::Schema.define(version: 2022_02_17_230122) do
 
   create_table "chambas", force: :cascade do |t|
     t.boolean "approve"
-    t.string "cover_image"
     t.datetime "created_at", precision: 6, null: false
     t.string "date"
     t.string "description"
