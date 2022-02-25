@@ -1,0 +1,50 @@
+<div class="card my-3 crud-card crud-card-main">
+  <div id="form_chamba" class="card-header">
+  <%= form_for @chamba do |f|%>
+    <div class="input-group mb-4">
+      <%= f.text_field :title, :class => "form-control", placeholder: "Titulo de la chamba", :required => true%>
+      <!--<input id="title" type="text" name="title" class="form-control" placeholder="Titulo">-->
+      &nbsp; &nbsp; &nbsp;
+      <label class="input-group-text">📍</label>
+      <%= f.text_field :location, :class => "form-control", placeholder: "Ubicación", :required => true%>
+    </div>
+
+    <div class="input-group mb-4">
+      <label class="input-group-text" id="basic-addon1">Organización / empresa</label>
+      <!--<input type="text" name="organization" class="form-control" placeholder="Forem" aria-label="Username" aria-describedby="basic-addon1">-->
+      <%= f.text_field :organization, :class => "form-control", placeholder: "Organización", :required => true%>
+       &nbsp; &nbsp;
+      <label class="input-group-text" id="basic-addon1">📅 Expiración</label>
+      <!--<input type="text" name="organization" class="form-control" placeholder="Forem" aria-label="Username" aria-describedby="basic-addon1">-->
+      <%= f.date_field :exp_date, :class => "form-control", placeholder: "Fecha de expiración", :required => true%>
+    </div>
+
+    <div class="input-group mb-4">
+      <label class="input-group-text">Puesto</label>
+      <%= f.text_field :stall, :class => "form-control", placeholder: "Puesto", :required => true%>
+      &nbsp; &nbsp;
+      <label class="input-group-text">💰</label>
+      <%= f.number_field :salary, :class => "form-control", placeholder: "Salario", :required => true%>
+    </div>
+
+    <div class="input-group mb-4">
+      <label class="input-group-text">📝</label>
+      <%= f.text_area :description, :class => "form-control", placeholder: "Descripción", :required => true%>
+    </div>
+    
+    <label for="basic-url" class="form-label requirements-label">Para poder agregar los requisitos escribe cada requisito separado por una coma o no podrá ser agregado..</label>
+    <div class="input-group mb-5">
+      <label class="input-group-text">Requerimientos</label>
+      <%= f.text_field :requirements, :class => "form-control", placeholder: "Requerimientos", :required => true%>
+    </div>
+    <button id="createChambaBtn" class="btn btn-primary">Crear chambita</button>
+  </div>
+  <%end%>
+</div>
+
+<div class="row">
+  <div class="col-12">
+      <%= render partial: "individual_chambas", collection: @chambas, as: :chamba %>
+  </div>
+</div>
+<%= render partial: "image_upload_script" %>

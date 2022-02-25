@@ -1,0 +1,47 @@
+<div class="chamba">
+    <div class="crayons-layout">
+        <div class="card-chamba">
+            <div class="return-chamba">
+                <a href="#"><i class="fas fa-caret-left i-icon"></i>Regresar</a>
+            </div>
+                <div class="chamba-info">
+                    <div class="chamba-logo">
+                    <%= image_tag "chamba-icon.png", class: "codeando-logo" %>
+                        <div>
+                            <h3><%= @chamba.organization %></h3>
+                            <h4><%= @chamba.created_at.strftime("%d - %B - %Y") %></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="chamba-title">
+                    <h1><%= @chamba.title %></h1>
+                    <div class="chamba-div">
+                        <i class="fas fa-map-marker-alt i-icon"></i>
+                        <h2><%= @chamba.location %></h2>
+                        <h2> | </h2>
+                        <h2><%= @chamba.position %></h2>
+                        <h2> | </h2>
+                        <h2>$<%= @chamba.salary %></h2>
+                    </div>
+                    <div class="chamba-btn">
+                        <button type="button" class="apply">Aplicar ahora</button>
+                    </div>
+                </div>
+        </div>
+            <div class="chamba-details">
+                <div class="chamba-responsibilities">
+                    <h3>Responsabilidades</h3>
+                    <p><%= @chamba.description %></p>
+                </div>
+                <div class="chamba-requirements">
+                    <h3>Requerimientos</h3>
+                    <ul>
+                        <% @requerimientos.length.times do |reg_req| %>
+                        <li><%= @requerimientos[reg_req] %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

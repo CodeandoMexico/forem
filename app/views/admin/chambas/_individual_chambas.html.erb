@@ -1,0 +1,51 @@
+<style>
+  .article-body-html img {
+    max-width: 100%;
+  }
+</style>
+<div class="card my-3 crud-card">
+  <div class="card-header">
+    <h2 class="chambita-title mb-3">
+      <a href="<%= chamba_path(chamba_id: chamba.id) %>" target="_blank" rel="noopener">
+          <%= chamba.title %>
+      </a>
+    </h2>
+    
+    <div>
+    <span id="editBtn" class="btn btn-sm btn-primary" data-id="<%= chamba.id%>" data-title="<%= chamba.title%>" data-location="<%= chamba.location%>" data-organization="<%= chamba.organization%>" data-exp_date="<%= chamba.exp_date%>" data-stall="<%= chamba.stall%>" data-salary="<%= chamba.salary%>" data-description="<%= chamba.description%>" data-requirements="<%= chamba.requirements%>" >Edit</span></a>
+      <div class="chamba-img">
+      <%= image_tag "chamba-icon.png", class: "chamba-image mt-5 mb-5" %>
+      </div>
+      <%= form_with url:"edit_chambas_list" do |f| %>
+        <div class="row">
+          <span id="info_icon_exp_date" title="Las chambitas se borraran llegada la fecha de expiración, (si deseas borrar esta chambita ahora, coloca la fecha de hoy...)">ℹ️</span>
+          <div class="input-group mb-3">
+            <label class="input-group-text">Publication date:</label>
+            <input id="fechita" type="date" class="form-control" size="6" name="chamba_to_edit[published_at]"  required>
+            <label class="input-group-text">⏰</label>
+            <input type="time" class="form-control" size="6" name="chamba_to_edit[time]" required>
+          </div>
+        </div>
+    
+        <% if chamba.approve == true  %>
+          <input type="checkbox" class="checkbox_approve_bann" size="9" name="chamba_to_edit[approve]" checked>
+          <label class="">Approve</label>
+          <input type="checkbox" class="checkbos_approve_bann" size="9" name="chamba_to_edit[bann]">
+          <label class="">Bann</label>
+        <%else%>
+          <input type="checkbox" class="checkbox_approve_bann" size="9" name="chamba_to_edit[approve]">
+          <label class="">Approve</label>
+          <input type="checkbox" class="checkbos_approve_bann" size="9" name="chamba_to_edit[bann]">
+          <label class="">Ban</label>
+        <%end%>
+        <input type="hidden" name="chamba_to_edit[id]" value="<%= chamba.id%>">
+        <div class="col">
+          <button class="btn btn-primary float-right">Actualizar</button>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>
